@@ -12,7 +12,9 @@
     <header>
         <div class="navbar">
             <img src="images/logofile.png" class="logo" />
-            <ul>
+            <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+
+            <ul id="nav-links">
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#dance-forms">Dance Forms</a></li>
@@ -46,12 +48,14 @@
             <li><strong>Classes:</strong> We offer a wide range of dance classes, including Ballet, Hip Hop,
                 Salsa,Contemporary, and more.
                 <br> Our experienced instructors are dedicated to helping you achieve your dance
-                goals.</li>
+                goals.
+            </li>
             <li><strong>Workshops:</strong> Participate in special workshops led by guest artists and renowned
                 choreographers.<br>
                 These sessions provide a unique opportunity to learn new styles and techniques.</li>
             <li><strong>Events:</strong> Join us for exciting dance events and showcases throughout the year.
-                <br>These events not only allow you to perform but also to connect with fellow dance enthusiasts.</li>
+                <br>These events not only allow you to perform but also to connect with fellow dance enthusiasts.
+            </li>
             <li><strong>Community:</strong> We believe in giving back! Our outreach programs aim to bring dance
                 to underserved communities, <br>making it accessible to everyone.</li>
         </ul>
@@ -91,7 +95,7 @@
             <div class="dance-form">
                 <img src="images/kathak.png" alt="Kathak">
                 <p>Kathak is a classical dance form <br>
-                    from North India, known for storytelling 
+                    from North India, known for storytelling
                     <br>through expressive
                     gestures.
                 </p>
@@ -125,20 +129,21 @@
             <div class="dance-form">
                 <img src="images/contemporary.png" alt="Contemporary">
                 <p>Contemporary dance blends elements of <br>
-                    various dance styles, emphasizing 
-                    <br>creativity and expression.</p>
+                    various dance styles, emphasizing
+                    <br>creativity and expression.
+                </p>
             </div>
             <div class="dance-form">
                 <img src="images/break.png" alt="Breakdance">
                 <p>Breakdance, or b-boying, is a street dance<br>
-                     style that originated in the 1970s, 
-                     <br>featuring dynamic moves.
+                    style that originated in the 1970s,
+                    <br>featuring dynamic moves.
                 </p>
             </div>
             <div class="dance-form">
                 <img src="images/flamenco.png" alt="Flamenco">
                 <p>Flamenco is a passionate dance <br>
-                     from Spain, characterized by intricate footwork
+                    from Spain, characterized by intricate footwork
                     <br> and hand claps.
                 </p>
             </div>
@@ -150,7 +155,7 @@
             </div>
             <div class="dance-form">
                 <img src="images/tapdance.png" alt="Tap Dance">
-                <p>Tap dance features shoes fitted 
+                <p>Tap dance features shoes fitted
                     <br>with metal taps that create sound
                     <br> when struck against the floor.
                 </p>
@@ -158,15 +163,17 @@
             <div class="dance-form">
                 <img src="images/ghoomar.png" alt="Ghoomar">
                 <p>Ghoomar is a traditional Rajasthani dance <br>
-                    performed by women, characterized by graceful twirls 
-                    <br>and vibrant costumes.</p>
+                    performed by women, characterized by graceful twirls
+                    <br>and vibrant costumes.
+                </p>
             </div>
             <div class="dance-form">
                 <img src="images/ballroom.png" alt="Ballroom">
                 <p>Ballroom dance includes partner dances<br>
-                    like the waltz, tango, and foxtrot, 
+                    like the waltz, tango, and foxtrot,
                     <br>characterized by their
-                    formal style.</p>
+                    formal style.
+                </p>
             </div>
         </div>
     </section>
@@ -215,6 +222,18 @@
             slideIndex += n - 1;
             showSlides();
         }
+
+        function toggleMenu() {
+            const nav = document.getElementById("nav-links");
+            nav.classList.toggle("show");
+        }
+
+        document.querySelectorAll("#nav-links a").forEach(link => {
+            link.addEventListener("click", () => {
+                document.getElementById("nav-links").classList.remove("show");
+            });
+        });
+
     </script>
 
 </body>
